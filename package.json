@@ -1,0 +1,26 @@
+{
+  "name": "transport",
+  "version": "1.0.0",
+  "description": "a webapp for transport",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "transport"
+  ],
+  "author": "tangwei",
+  "license": "ISC",
+  "dependencies": {
+    "connect-mongo": "^1.3.2",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-less": "^3.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "mongoose": "^4.5.10",
+    "underscore": "^1.8.3"
+  }
+}

@@ -1,0 +1,47 @@
+extend ../includes/head
+block content 
+  .content
+    .content_nav
+      .nav_new.active
+        .nav_icon_bar#new_user
+          a(href="/new")
+            img(src="./images/new_user.png")
+            .nav_title 新增客户
+      .nav_new 
+        .nav_icon_bar#new_order
+          a(href="/order")
+            img(src="./images/new_order.png")
+            .nav_title 添加订单
+      .nav_new 
+        .nav_icon_bar
+          a(href="/good") 
+            img(src="./images/new_good.png")
+            .nav_title 货品管理
+      .nav_new 
+        .nav_icon_bar#new_find
+          a(href="/find") 
+            img(src="./images/new_find.png")
+            .nav_title 货单查询
+    .content_box
+      if sumup
+        table.usertable
+          thead
+            tr
+              th 货品名称
+              th 货品价格
+              th 取货地点
+          tbody
+            each item in sumup.item
+              tr.user_row
+                td #{item[0]}
+                td #{item[1]}
+                td #{item[2]}
+        .totalcount(style="font-size:30px;text-align:center;margin-top:100px;color:#fff;font-weight:bold") 共需付款￥#{sumup.total}
+      else
+        .new_input_bar
+            form(method="POST" action='/ctfind')
+              input(type="text",placeholder="请输入用户id",name='userid',style="margin-top:30px;")
+              button.loginbtn(type="submit",style="margin-top:150px;") 结算
+  script(src="js/jquery.min.js")
+  script(src="js/content.js")
+  

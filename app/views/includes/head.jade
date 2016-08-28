@@ -1,0 +1,47 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    title 物流管理系统
+    link(href="css/content.css" rel="stylesheet")
+  body
+    .header
+      .logobar
+        .top_logo
+          a(href="/")
+            img(src="./images/car.png")
+        .top_logo_content 物流管理系统
+        ul.top_list
+          li
+            a(href="/") 首页
+          li
+            a(href="/#footer") 关于
+          if manager
+            li
+              a(href="/logout") 退出登录
+          else
+            li#signinbtn
+              a(href="#") 登录
+          li#signupbtn
+            a(href="#") 注册
+    .mask
+    .signin_bar
+      form(method="POST" action='/signin')
+        .signin_head 登录
+        input(type="text",placeholder="用户名",name='manager[username]')
+        input(type="password",placeholder="密码",name="manager[password]")
+        button.loginbtn(type="submit") Log&nbsp;&nbsp;In
+        .mention 没有注册账户？去 
+          a(href="#") 注册
+      .close#close_signin ×
+    .signup_bar
+      form(method="POST" action='/signup')
+        .signin_head 注册
+        input(type="text",placeholder="用户名",name='manager[username]')
+        input#password(type="password",placeholder="密码",name="manager[password]")
+        input#confirmPassword(type="password",placeholder="确认密码")
+        input(type="text",placeholder="邮箱",name="manager[email]")
+        input(type="text",placeholder="电话",name="manager[telephone]")   
+        button.loginbtn(type="submit") Log&nbsp;&nbsp;In
+      .close#close_signup ×
+    block content

@@ -1,0 +1,132 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    title #{title}
+    link(href="css/index.css" rel="stylesheet")
+  body
+    .head
+      .top_head
+        .top_logo.clearfix
+          a(href="/")
+            img(src="./images/car.png")
+        ul.login_bar
+          if manager
+            li.login_item
+              a(href="/logout") 退出登录
+          else
+            li.login_item#signinbtn
+              a(href="#") Sign In
+          li.login_item#signupbtn
+            a(href="#") Sign Up
+      .top_content
+        .main_content 物流管理中心
+        .main_desc 物流配送系统的主要目标是为配送公司开发有市场前景的配送服务提供支持。并快速、高效调度配送公司内的各种资源</br>使配送公司内的各部门协助合作为客户提供满意、高效的配送服务。
+      .top_footer
+        ul.nav_bar
+          li.nav_item.active
+            a(href="#") 首页
+          li.nav_item
+            a(href="#footer") 关于
+          li.nav_item
+            a(href="/new") 新增客户
+          li.nav_item
+            a(href="/order") 添加订单
+          li.nav_item
+            a(href="/good") 货品管理
+          li.nav_item
+            a(href="/find") 货单查询
+    .content
+      .content_bar.clearfix
+        .info_box
+          .info_title 信息流
+          .info_content 整个配送系统的运转是以信息流为驱动，以它为基础协调各部门通力合作为客户提供优质的服务。主要指各种单据在各部门间的有序传递。
+        .info_box 
+          .info_title 物质流
+          .info_content 物质流是配送系统的基础，本系统对物质的管理指的是货物从中心库房运输到分站库房，配送员从分站库房领取货物，最终送到客户的过程。
+        .info_light_box.info_light_content
+          .info_text 
+            .info_text_title 资金流
+            .info_text_content 建立配送系统的最终目的是获取盈利，所以资金流是本系统的关键。
+          .info_img
+            img(src="./images/g3.jpg")
+    .img_gallery.clearfix
+      .img_gallery_head 业务展示
+      .info_light_box
+        .info_text 
+          .info_text_title Desc
+          .info_text_content 集中数据管理、分布式应用，实现信息的全面共享，为决策者提供最新的数据。
+        .info_img
+          img(src="./images/g1.jpg")
+      .info_light_box
+        .info_text 
+          .info_text_title Desc
+          .info_text_content 完全基于浏览器的操作模式，安装简单、操作方便，具有良好的系统扩充能力。
+        .info_img
+          img(src="./images/g2.jpg")
+      .info_light_box
+        .info_text 
+          .info_text_title Desc
+          .info_text_content 严格的安全管理机制。利用SSL技术维护网络传输安全，保证基本信息的安全管理。
+        .info_img
+          img(src="./images/g4.jpg")
+      .info_light_box
+        .info_text 
+          .info_text_title Desc
+          .info_text_content 灵活的模块需求设计，可根据实训项目周期灵活裁剪，支持中英文界面切换。
+        .info_img
+          img(src="./images/g5.jpg")
+      .info_light_box
+        .info_text 
+          .info_text_title Desc
+          .info_text_content 提供日常操作的审计功能，并对重要的安全事件提供报警，对重要数据进行加密。
+        .info_img
+          img(src="./images/g6.jpg")
+    .footer#footer
+      .part
+        ul.authorlist
+          span.authorhead 使用技术
+          li javascript&jQuery
+          li NodeJs
+          li MongoDB
+          li Express&Jade
+          li html&css
+      .part
+        ul.authorlist
+          span.authorhead 小组成员
+          li 许伟
+          li 潘英富
+          li 唐玮
+          li 彭佳慧
+          li 杨彬
+      .part
+        ul.authorlist
+          span.authorhead 参考资料
+          li 《Nodejs实战》
+          li 《锋利的jQuery》
+          li 《MongoDB权威指南》
+          li 《javascript高级程序设计》
+          li 《深入浅出NodeJs》
+    .mask
+    .signin_bar
+      form(method="POST" action='/signin')
+        .signin_head 登录
+        input(type="text",placeholder="用户名",name='manager[username]')
+        input(type="password",placeholder="密码",name="manager[password]")
+        button.loginbtn(type="submit") Log&nbsp;&nbsp;In
+        .mention 没有注册账户？去 
+          a(href="#") 注册
+      .close#close_signin ×
+    .signup_bar
+      form(method="POST" action='/signup')
+        .signin_head 注册
+        input(type="text",placeholder="用户名",name='manager[username]')
+        input#password(type="password",placeholder="密码",name="manager[password]")
+        input#confirmPassword(type="password",placeholder="确认密码")
+        input(type="text",placeholder="邮箱",name="manager[email]")
+        input(type="text",placeholder="电话",name="manager[telephone]")   
+        button.loginbtn(type="submit") Log&nbsp;&nbsp;In
+      .close#close_signup ×
+    script(src="./js/jquery.min.js")
+    script(src="./js/main.js")
+

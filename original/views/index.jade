@@ -1,0 +1,130 @@
+doctype
+html
+  head
+    meta(charset="utf-8")
+    title 物流管理系统
+    link(href="./css/index.css" rel="stylesheet")
+  body
+    .head
+      .top_head
+        .top_logo.clearfix
+          a(href="./index.html")
+            img(src="./images/car.png")
+        ul.login_bar
+          li.login_item#signinbtn
+            a(href="#") Sign In
+          li.login_item#signupbtn
+            a(href="#") Sign Up
+      .top_content
+        .main_content 物流管理中心
+        .main_desc 物流配送系统的主要目标是为配送公司开发有市场前景的配送服务提供支持。并快速、高效调度配送公司内的各种资源</br>使配送公司内的各部门协助合作为客户提供满意、高效的配送服务。
+      .top_footer
+        ul.nav_bar
+          li.nav_item.active
+            a(href="#") 首页
+          li.nav_item
+            a(href="#footer") 关于
+          li.nav_item
+            a(href="./new.html") 新增客户
+          li.nav_item
+            a(href="./order.html") 添加订单
+          li.nav_item
+            a(href="./send.html") 送货查询
+          li.nav_item
+            a(href="./find.html") 货单查询
+    .content
+      .content_bar
+        .info_box
+          .info_title 信息流
+          .info_content 整个配送系统的运转是以信息流为驱动，以它为基础协调各部门通力合作为客户提供优质的服务。本系统的信息流主要指各种单据在各部门间的有序传递。
+        .info_box 
+          .info_title 信息流
+          .info_content 整个配送系统的运转是以信息流为驱动，以它为基础协调各部门通力合作为客户提供优质的服务。本系统的信息流主要指各种单据在各部门间的有序传递。
+        .info_light_box.info_light_content
+          .info_text 
+            .info_text_title Desc
+            .info_text_content 主要单据有：订单、配送任务单、货物调拨单、出库单、分发单、路单、验货单、签收单。
+          .info_img
+            img(src="./images/g3.jpg")
+    .img_gallery.clearfix
+      .img_gallery_head 业务展示
+      .info_light_box
+        .info_text 
+          .info_text_title Desc
+          .info_text_content 主要单据有：订单、配送任务单、货物调拨单、出库单、分发单、路单、验货单、签收单。
+        .info_img
+          img(src="./images/g1.jpg")
+      .info_light_box
+        .info_text 
+          .info_text_title Desc
+          .info_text_content 主要单据有：订单、配送任务单、货物调拨单、出库单、分发单、路单、验货单、签收单。
+        .info_img
+          img(src="./images/g2.jpg")
+      .info_light_box
+        .info_text 
+          .info_text_title Desc
+          .info_text_content 主要单据有：订单、配送任务单、货物调拨单、出库单、分发单、路单、验货单、签收单。
+        .info_img
+          img(src="./images/g4.jpg")
+      .info_light_box
+        .info_text 
+          .info_text_title Desc
+          .info_text_content 主要单据有：订单、配送任务单、货物调拨单、出库单、分发单、路单、验货单、签收单。
+        .info_img
+          img(src="./images/g5.jpg")
+      .info_light_box
+        .info_text 
+          .info_text_title Desc
+          .info_text_content 主要单据有：订单、配送任务单、货物调拨单、出库单、分发单、路单、验货单、签收单。
+        .info_img
+          img(src="./images/g6.jpg")
+    .footer#footer
+      .part
+        ul.authorlist
+          span.authorhead 小组成员
+          li 许伟
+          li 潘英富
+          li 唐玮
+          li 彭佳慧
+          li 杨彬
+      .part
+        ul.authorlist
+          span.authorhead 小组成员
+          li 许伟
+          li 潘英富
+          li 唐玮
+          li 彭佳慧
+          li 杨彬
+      .part
+        ul.authorlist
+          span.authorhead 小组成员
+          li 许伟
+          li 潘英富
+          li 唐玮
+          li 彭佳慧
+          li 杨彬
+    .mask
+    .signin_bar
+      form(method="POST" action='/user/signin')
+        .signin_head 登录
+        input(type="text",placeholder="用户名",name='user[name]')
+        input(type="password",placeholder="密码",name="user[password]")
+        button.loginbtn(type="submit") Log&nbsp;&nbsp;In
+        .mention 没有注册账户？去 
+          a(href="#") 注册
+      .close#close_signin ×
+    .signup_bar
+      form(method="POST" action='/user/signin')
+        .signin_head 注册
+        input(type="text",placeholder="用户名",name='user[name]')
+        input(type="password",placeholder="密码",name="user[password]")
+        input(type="password",placeholder="确认密码",name="user[password]")
+        input(type="password",placeholder="邮箱",name="user[password]")
+        input(type="password",placeholder="身份证",name="user[password]")
+        input(type="password",placeholder="工作单位",name="user[password]")
+        input(type="password",placeholder="电话",name="user[password]")   
+        button.loginbtn(type="submit") Log&nbsp;&nbsp;In
+      .close#close_signup ×
+    script(src="./js/jquery.min.js")
+    script(src="./js/main.js")
+

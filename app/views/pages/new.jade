@@ -1,0 +1,58 @@
+extend ../includes/head
+block content 
+  .content
+    .content_nav
+      .nav_new
+        .nav_icon_bar#new_user
+          a(href="/new")
+            img(src="./images/new_user.png")
+            .nav_title 新增客户
+      .nav_new 
+        .nav_icon_bar#new_order
+          a(href="/order")
+            img(src="./images/new_order.png")
+            .nav_title 添加订单
+      .nav_new 
+        .nav_icon_bar 
+          a(href="/good") 
+            img(src="./images/new_good.png")
+            .nav_title 货品管理
+      .nav_new 
+        .nav_icon_bar#new_find
+          a(href="/find") 
+            img(src="./images/new_find.png")
+            .nav_title 货单查询
+    if manager
+      .content_box
+        if users
+            table.usertable
+              thead
+                tr
+                  th 用户标识
+                  th 姓名
+                  th 电邮
+                  th 工作地点
+                  th 电话
+              tbody
+                each user in users
+                  tr.user_row
+                    td #{user._id}
+                    td #{user.name}
+                    td #{user.email}
+                    td #{user.address}
+                    td #{user.telephone}
+        else
+          .new_input_bar
+            form(method="POST" action='/new')
+              input(type="text",placeholder="用户标识，系统自动生成",disabled="disabled")
+              input(type="text",placeholder="姓名",name='user[name]')
+              input(type="text",placeholder="邮箱",name="user[email]")
+              input(type="text",placeholder="工作地点",name="user[address]")
+              input(type="text",placeholder="电话",name="user[telephone]")
+              button.loginbtn(type="submit") 提交
+            form(method="GET" action='/fdnew')
+              button.loginbtn#findbtn(type="submit") 查询 
+    else
+      .content_box
+  script(src="js/jquery.min.js")
+  script(src="js/content.js")

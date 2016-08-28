@@ -1,0 +1,59 @@
+extend ../includes/head
+block content 
+  .content
+    .content_nav
+      .nav_new.active
+        .nav_icon_bar#new_user
+          a(href="/new")
+            img(src="./images/new_user.png")
+            .nav_title 新增客户
+      .nav_new 
+        .nav_icon_bar#new_order
+          a(href="/order")
+            img(src="./images/new_order.png")
+            .nav_title 添加订单
+      .nav_new 
+        .nav_icon_bar
+          a(href="/good") 
+            img(src="./images/new_good.png")
+            .nav_title 货品管理
+      .nav_new 
+        .nav_icon_bar#new_find
+          a(href="/find") 
+            img(src="./images/new_find.png")
+            .nav_title 货单查询
+    script(src="js/echarts.min.js")
+    script(src='js/china.js')
+    .content_box
+      if orders
+        table.usertable
+              thead
+                tr
+                  th 用户id 
+                  th 货物名称
+                  th 货物价格
+                  th 送货地址
+                  th 配送中心
+              tbody
+                each order in orders
+                  tr.user_row
+                    td #{order.userid}
+                    td #{order.ordername}
+                    td #{order.ordervalue}
+                    td #{order.location}
+                    td #{order.sendpoint}
+      else
+        .map#map(style="width:900px;height:100%")
+        .orderinput
+          form(method="POST",action="/nworder")
+            input(type="text",name="order[userid]",placeholder="请输入用户id")
+            input#order_name(type="text",name="order[ordername]",placeholder="请输入货物名称")
+            input#order_value(type="text",name="order[ordervalue]",placeholder="货物价格",readonly="readonly")
+            input#order_location(type="text",name="order[location]",placeholder='送货地址',readonly="readonly")
+            input#order_sendpoint(type="text",name="order[sendpoint]",placeholder='配送中心',readonly="readonly")
+            button.orderbtn(type="submit") 提交
+          form(method="GET",action="/fdorder")
+            button.orderbtn(type="submit") 查询
+    script(src='js/map.js')
+  script(src="js/jquery.min.js")
+  script(src="js/content.js")
